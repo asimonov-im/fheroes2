@@ -26,7 +26,7 @@
 #include "sdlnet.h"
 #include "gamedefs.h"
 
-enum msg_t
+enum h2_msg_t
 {
     MSG_RAW,
 
@@ -123,7 +123,7 @@ namespace Network
 {
     int			RunDedicatedServer(void);
     const char*         GetMsgString(u16);
-    msg_t		GetMsg(u16);
+    h2_msg_t		GetMsg(u16);
     bool		MsgIsBroadcast(u16);
 
     bool		isLocalClient(void);

@@ -29,7 +29,7 @@
 #include "settings.h"
 
 #define DEFAULT_PORT	5154
-#define DEFAULT_DEBUG	DBG_ALL_WARN
+#define DEFAULT_DEBUG	DBG_ALL_TRACE //DBG_ALL_WARN
 
 bool IS_DEBUG(int name, int level)
 {
@@ -719,6 +719,11 @@ ListDirs Settings::GetRootDirs(void)
 
     // from dirname
     dirs.push_back(GetDirname(conf.path_program));
+
+#ifdef __PLAYBOOK__
+    dirs.push_back("");
+    dirs.push_back("app/native");
+#endif
 
     // from HOME
     const std::string & home = GetHomeDir();

@@ -124,9 +124,9 @@ const char* Network::GetMsgString(u16 msg)
     return "MSG_UNKNOWN";
 }
 
-msg_t Network::GetMsg(u16 msg)
+h2_msg_t Network::GetMsg(u16 msg)
 {
-    return msg < MSG_UNKNOWN ? static_cast<msg_t>(msg) : MSG_UNKNOWN;
+    return msg < MSG_UNKNOWN ? static_cast<h2_msg_t>(msg) : MSG_UNKNOWN;
 }
 
 bool Network::isLocalClient(void)
